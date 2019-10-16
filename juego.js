@@ -1,10 +1,11 @@
 document.addEventListener("keydown", function(evento){
     if(evento.keyCode == 32){
-        console.log("salta");
+        console.log("salta ");
 
         if(nivel.muerto == false){
             saltar();
-        }
+        } 
+
         else {
             nivel.velocidad = 9;
             nube.velocidad = 1;
@@ -16,6 +17,7 @@ document.addEventListener("keydown", function(evento){
         
     }
 });
+
 
 // VAR IMAGENES  ------------------------------
 
@@ -68,6 +70,7 @@ var obst = {x: ancho + 100, y: suelo};
 var nube = {x: 400, y: 100, velocidad: 1};
 var sueloG = {x:0, y: 253};
 
+
 //DIBUJA TIPO  ------------------------------
 
 function dibujaTipo(){
@@ -85,6 +88,7 @@ function logicaObst(){
         obst.x = ancho + 100;
         nivel.marcador++;
         nivel.velocidad++;
+        
     } 
     else {
         obst.x -= nivel.velocidad;
@@ -120,6 +124,8 @@ function logicaNube(){
         nube.x -= nube.velocidad;
     }
 } 
+
+
 
 // FUNCION SALTAR  ------------------------------
 
@@ -160,16 +166,31 @@ function colision(){
     }
 }
 
+function stopBet(){
+    if(nivel.marcador == 5){
+        nivel.velocidad = 0;
+        nube.velocidad = 0;
+    }
+}
+
 // PUNTUACION - GAME OVER  ------------------------------
 
 function puntuacion(){
-    ctx.font = "20px impact";
+    ctx.font = "20px VT323";
     ctx.fillStyle = '#ffffff';
     ctx.fillText(`${"FREE BET: "+ nivel.marcador}`, 600, 50);
 
     if(nivel.muerto == true){
-        ctx.font = "60px impact";
+        ctx.font = "100px VT323";
         ctx.fillText(`GAME OVER`, 240, 150);
+    }
+
+    if(nivel.marcador == 5){
+        ctx.font = "100px VT323";
+        ctx.fillStyle = '#000000';
+        ctx.fillText(`X5`, 340, 150);
+        ctx.font = "50px VT323";
+        ctx.fillText(`FREEBETS`, 310, 195);
     }
 }
 
@@ -187,6 +208,7 @@ function principal(){
     borraCanvas();
     gravedad();
     colision();
+    stopBet();
     logicaSuelo();
     logicaObst();
     logicaNube();
