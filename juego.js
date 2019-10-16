@@ -1,3 +1,5 @@
+// CLICK CONTROL  ------------------------------
+
 document.addEventListener('click', ()=> {
     saltar();
     if(nivel.muerto == false){
@@ -15,7 +17,7 @@ document.addEventListener('click', ()=> {
 })
 
 
-
+// SPACE BAR CONTROL  ------------------------------
 
 document.addEventListener("keydown", function(evento){
     if(evento.keyCode == 32){
@@ -40,7 +42,7 @@ document.addEventListener("keydown", function(evento){
 
 // VAR IMAGENES  ------------------------------
 
-var imgTipo, imgNube, imgObst, imgSuelo
+var imgTipo, imgNube, imgObst, imgSuelo, imgLogo;
 
 // CARGA IMAGAGENES  ------------------------------
 
@@ -49,12 +51,14 @@ function cargaImagenes(){
     imgNube = new Image();
     imgObst = new Image();
     imgSuelo = new Image();
+    imgLogo = new Image();
 
 
     imgTipo.src = "img/tipo.png";
     imgNube.src = "img/nube.png";
     imgObst.src = "img/obst.png";
     imgSuelo.src = "img/suelo.png";
+    imgLogo.src = "img/PC_Apuestas.png";
 }
 
 
@@ -89,6 +93,12 @@ var obst = {x: ancho + 100, y: suelo + 9};
 var nube = {x: 400, y: 100, velocidad: 1};
 var sueloG = {x:0, y: 253};
 
+
+//DIBUJA LOGO  ------------------------------
+
+function dibujaLogo(){
+    ctx.drawImage(imgLogo,0,0,200,89,20,20,200,89);
+}
 
 //DIBUJA TIPO  ------------------------------
 
@@ -233,6 +243,7 @@ function principal(){
     logicaSuelo();
     logicaObst();
     logicaNube();
+    dibujaLogo();
     dibujaSuelo();
     dibujaObs();
     dibujaNube();
