@@ -1,4 +1,23 @@
-document.addEventListener("keydown", function(evento){
+document.addEventListener('click', ()=> {
+    saltar();
+    if(nivel.muerto == false){
+        saltar();
+    } 
+
+    else {
+        nivel.velocidad = 9;
+        nube.velocidad = 1;
+        obst.x = ancho + 100;
+        nube.x = ancho + 100;
+        nivel.marcador = 0;
+        nivel.muerto = false;
+    }
+})
+
+
+
+
+/* document.addEventListener("keydown", function(evento){
     if(evento.keyCode == 32){
         console.log("salta ");
 
@@ -16,7 +35,7 @@ document.addEventListener("keydown", function(evento){
         }
         
     }
-});
+}); */
 
 
 // VAR IMAGENES  ------------------------------
