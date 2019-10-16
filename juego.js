@@ -66,7 +66,7 @@ function borraCanvas(){
 var suelo = 200;
 var tipo = {y: suelo, vy:0, gravedad:2, salto:28, vymax:9, saltando:false};
 var nivel = {velocidad: 9, marcador: 0, muerto: false};
-var obst = {x: ancho + 100, y: suelo};
+var obst = {x: ancho + 100, y: suelo + 9};
 var nube = {x: 400, y: 100, velocidad: 1};
 var sueloG = {x:0, y: 253};
 
@@ -182,15 +182,17 @@ function puntuacion(){
 
     if(nivel.muerto == true){
         ctx.font = "100px VT323";
-        ctx.fillText(`GAME OVER`, 240, 150);
+        ctx.fillText(`GAME OVER`, 190, 150);
     }
 
     if(nivel.marcador == 5){
-        ctx.font = "100px VT323";
+        ctx.font = "120px VT323";
         ctx.fillStyle = '#000000';
-        ctx.fillText(`X5`, 340, 150);
+        ctx.fillText(`$100`, 310, 135);
         ctx.font = "50px VT323";
-        ctx.fillText(`FREEBETS`, 310, 195);
+        ctx.fillText(`FREEBETS X 5`, 280, 180);
+        ctx.font = "30px VT323";
+        ctx.fillText(`16-22/OCTUBRE`, 320, 210);
     }
 }
 
