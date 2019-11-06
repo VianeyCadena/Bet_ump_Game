@@ -1,2 +1,4 @@
 # Bet_ump_Game
-A simply game of T-Rex Chrome with look and feel Mario
+A simple game based on the T-Rex game of Chrome with look and feel of Mario Bros.
+
+
