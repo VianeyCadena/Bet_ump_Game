@@ -58,7 +58,7 @@ function cargaImagenes(){
     imgNube.src = "img/nube.png";
     imgObst.src = "img/obst.png";
     imgSuelo.src = "img/suelo.png";
-    imgLogo.src = "img/PC_Apuestas.png";
+    imgLogo.src = "img/Betway_Logo.png";
 }
 
 
